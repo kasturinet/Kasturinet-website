@@ -3,56 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kasturinet - Internet Cerdas</title>
+  <title>Kasturinet - Internet Murah & Stabil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: #f4f7fc;
+      color: #333;
     }
     header {
       background: #004aad;
-      color: white;
+      color: #fff;
       padding: 20px;
       text-align: center;
     }
     header img {
       width: 100px;
+      margin-bottom: 10px;
     }
-    .tabs {
+    .hero {
+      padding: 60px 20px;
+      background: linear-gradient(to right, #004aad, #2176ff);
+      color: white;
+      text-align: center;
+    }
+    .cta {
+      background-color: #25D366;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .features, .paket, footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .promo-animation {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      background-color: #004aad;
+      padding: 40px 20px;
+      height: 180px;
       display: flex;
       justify-content: center;
-      margin: 20px auto;
-      flex-wrap: wrap;
-    }
-    .tab {
-      padding: 10px 20px;
-      background: #ddd;
-      cursor: pointer;
-      border-radius: 5px 5px 0 0;
-      margin: 0 5px;
-      font-weight: bold;
-    }
-    .tab.active {
-      background: #004aad;
-      color: white;
-    }
-    .tab-content {
-      display: none;
+      align-items: center;
       text-align: center;
-      padding: 20px;
-      background: white;
-      border-radius: 0 0 10px 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .promo-text {
+      transition: opacity 0.6s ease;
+    }
+    .poster-info {
+      text-align: center;
+      margin: 30px auto;
+    }
+    .poster-info img {
+      width: 90%;
       max-width: 600px;
-      margin: auto;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .tab-content img {
-      width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -61,38 +74,71 @@
   <header>
     <img src="logo.png" alt="Logo Kasturinet" />
     <h1>KASTURINET</h1>
-    <p>Solusi Cerdas untuk Internet Kamu</p>
   </header>
 
-  <div class="tabs">
-    <div class="tab active" data-tab="promo1">Promo 1</div>
-    <div class="tab" data-tab="promo2">Promo 2</div>
-    <div class="tab" data-tab="promo3">Kontak</div>
-  </div>
+  <section class="hero">
+    <h2>Internet Murah & Stabil</h2>
+    <p>Cuma Rp. 120.000/bulan + pemasangan awal Rp. 150.000</p>
+    <a href="https://wa.me/62895371069379" class="cta" target="_blank">Pasang Sekarang via WhatsApp</a>
+  </section>
 
-  <div id="promo1" class="tab-content active">
-    <img src="banner1.png" alt="Banner Promo Kasturinet">
-  </div>
-  <div id="promo2" class="tab-content">
-    <img src="banner2.png" alt="Banner Harga Paket">
-  </div>
-  <div id="promo3" class="tab-content">
-    <img src="poster.png" alt="Poster Info Kontak">
-  </div>
+  <section class="promo-animation">
+    <div class="promo-text" id="promoText">Koneksi lemot bikin emosi?</div>
+  </section>
+
+  <section class="features">
+    <div>
+      <h3>Nonton Film, Nonton YouTube, Scroll Tiktok, Main game</h3>
+      <p>Aktivitas digital kamu jadi lebih seru tanpa gangguan.</p>
+    </div>
+    <div>
+      <h3>Unlimited Data</h3>
+      <p>Tanpa batas kuota, cocok untuk semua aktivitas digitalmu.</p>
+    </div>
+    <div>
+      <h3>Support Jam Kerja</h3>
+      <p>Tim kami siap bantu (disaat jam kerja 08.00–16.45).</p>
+    </div>
+  </section>
+
+  <section class="paket">
+    <h2>Paket Favorit</h2>
+    <div>
+      <h3>Paket Basic</h3>
+      <p><strong>Rp. 120.000/bulan</strong></p>
+      <p>Pemasangan awal: Rp. 150.000</p>
+      <p>Kecepatan hingga 10 Mbps</p>
+    </div>
+  </section>
+
+  <section class="poster-info">
+    <img src="poster.png" alt="Info Kontak Kasturinet" />
+  </section>
+
+  <footer>
+    <p>Hubungi kami: 0895-3710-69379 | kasturinetcerdas02@gmail.com</p>
+    <p>&copy; 2025 Kasturinet. Solusi Cerdas untuk Internet Anda.</p>
+  </footer>
 
   <script>
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-        
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
-      });
-    });
+    const teksPromo = [
+      "Koneksi lemot bikin emosi?",
+      "KASTURINET hadir buat kamu!",
+      "Rp. 120.000/bulan - Unlimited & Stabil",
+      "Pemasangan cuma Rp. 150.000!",
+      "Hubungi: 0895371069379",
+      "KASTURINET - Solusi Cerdas untuk Semua"
+    ];
+    let i = 0;
+    const el = document.getElementById("promoText");
+    setInterval(() => {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = teksPromo[i];
+        el.style.opacity = 1;
+        i = (i + 1) % teksPromo.length;
+      }, 500);
+    }, 4000);
   </script>
 
 </body>
