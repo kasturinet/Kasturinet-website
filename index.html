@@ -38,34 +38,20 @@
       display: inline-block;
       margin-top: 20px;
     }
-    .features, .paket, footer {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .promo-animation {
-      font-size: 28px;
-      font-weight: bold;
-      color: white;
-      background-color: #004aad;
-      padding: 40px 20px;
-      height: 180px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .promo-text {
-      transition: opacity 0.6s ease;
-    }
-    .poster-info {
+    .promo-banner, .poster-info {
       text-align: center;
       margin: 30px auto;
     }
+    .promo-banner img,
     .poster-info img {
       width: 90%;
       max-width: 600px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .features, .paket, footer {
+      padding: 40px 20px;
+      text-align: center;
     }
   </style>
 </head>
@@ -79,11 +65,15 @@
   <section class="hero">
     <h2>Internet Murah & Stabil</h2>
     <p>Cuma Rp. 120.000/bulan + pemasangan awal Rp. 150.000</p>
-    <a href="https://wa.me/62895371069379" class="cta" target="_blank">Pasang Sekarang via WhatsApp</a>
+    <a href="https://wa.me/62895371069379?text=Halo%20saya%20tertarik%20pasang%20WiFi%20Kasturinet" 
+       class="cta" 
+       target="_blank">
+       Pasang Sekarang via WhatsApp
+    </a>
   </section>
 
-  <section class="promo-animation">
-    <div class="promo-text" id="promoText">Koneksi lemot bikin emosi?</div>
+  <section class="promo-banner">
+    <img src="banner1.png" alt="Banner Promo Kasturinet" />
   </section>
 
   <section class="features">
@@ -119,27 +109,6 @@
     <p>Hubungi kami: 0895-3710-69379 | kasturinetcerdas02@gmail.com</p>
     <p>&copy; 2025 Kasturinet. Solusi Cerdas untuk Internet Anda.</p>
   </footer>
-
-  <script>
-    const teksPromo = [
-      "Koneksi lemot bikin emosi?",
-      "KASTURINET hadir buat kamu!",
-      "Rp. 120.000/bulan - Unlimited & Stabil",
-      "Pemasangan cuma Rp. 150.000!",
-      "Hubungi: 0895371069379",
-      "KASTURINET - Solusi Cerdas untuk Semua"
-    ];
-    let i = 0;
-    const el = document.getElementById("promoText");
-    setInterval(() => {
-      el.style.opacity = 0;
-      setTimeout(() => {
-        el.textContent = teksPromo[i];
-        el.style.opacity = 1;
-        i = (i + 1) % teksPromo.length;
-      }, 500);
-    }, 4000);
-  </script>
 
 </body>
 </html>
