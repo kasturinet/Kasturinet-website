@@ -5,35 +5,56 @@
   <title>Kasturinet - Internet Murah & Stabil</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background: #f4f7fc;
       color: #333;
+      overflow-x: hidden;
     }
     header {
       background: #004aad;
       color: #fff;
       padding: 20px;
       text-align: center;
+      transition: background 0.5s ease;
+    }
+    header:hover {
+      background: #002f75;
     }
     header h1 {
       margin: 0;
     }
     .hero {
-      padding: 60px 20px;
-      background: linear-gradient(to right, #004aad, #2176ff);
+      padding: 80px 20px;
+      background: linear-gradient(-45deg, #004aad, #2176ff, #00bcd4, #8e24aa);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       color: white;
       text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .hero h2 {
       font-size: 40px;
       margin-bottom: 10px;
+      animation: fadeInUp 1s ease forwards;
     }
     .hero p {
       font-size: 18px;
       margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     .cta {
       background-color: #25D366;
@@ -43,68 +64,87 @@
       border-radius: 5px;
       font-weight: bold;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      background: white;
+    .cta:hover {
+      background-color: #1ebe5d;
+      transform: scale(1.05);
     }
-    .feature {
-      flex: 1 1 250px;
-      max-width: 300px;
-      margin: 15px;
-      padding: 20px;
-      background: #f0f4ff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .feature h3 {
-      color: #004aad;
-    }
-    .paket {
-      background: #eef5ff;
+    .video-section, .slider-section {
       padding: 50px 20px;
       text-align: center;
+      background: #fff;
     }
-    .paket h2 {
-      margin-bottom: 20px;
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
     }
-    .paket-box {
-      background: white;
-      display: inline-block;
-      padding: 30px;
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .swiper {
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    footer {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
+    .features, .paket, footer {
+      padding: 50px 20px;
     }
   </style>
 </head>
-<body>  <header data-aos="fade-down">
+<body>
+  <header data-aos="fade-down">
     <h1>KASTURINET</h1>
   </header>  <section class="hero" data-aos="zoom-in">
     <h2>Internet Murah & Stabil</h2>
     <p>Cuma Rp. 120.000/bulan + pemasangan awal Rp. 150.000</p>
     <a href="https://wa.me/62895371069379" class="cta" target="_blank">Pasang Sekarang via WhatsApp</a>
+  </section>  <section class="video-section" data-aos="fade-up">
+    <h2>Video Promosi</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>  <section class="slider-section" data-aos="fade-up">
+    <h2>Galeri Kasturinet</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://via.placeholder.com/700x400/004aad/ffffff?text=Kasturinet+1" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/700x400/2176ff/ffffff?text=Kasturinet+2" alt="Slide 2"></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/700x400/00bcd4/ffffff?text=Kasturinet+3" alt="Slide 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </section>  <section class="features">
     <div class="feature" data-aos="fade-up">
       <h3>Stabil & Cepat</h3>
-      <p>Cocok untuk, Nonton YouTube, Scroll TikTok, Main Game.</p>
+      <p>Nonton film, Nonton Youtube, Scroll Tiktok, Main game.</p>
     </div>
     <div class="feature" data-aos="fade-up" data-aos-delay="100">
       <h3>Unlimited Data</h3>
       <p>Tanpa batas kuota, cocok untuk semua aktivitas digitalmu.</p>
     </div>
     <div class="feature" data-aos="fade-up" data-aos-delay="200">
-      <h3>Support di jam kerja 08.00-16.45</h3>
-      <p>Tim kami siap bantu kamu (Saat jam kerja).</p>
+      <h3>Support 24 Jam</h3>
+      <p>Tim kami siap bantu kamu (Pada jam kerja).</p>
     </div>
   </section>  <section class="paket" data-aos="fade-in">
     <h2>Paket Favorit</h2>
@@ -118,5 +158,12 @@
     <p>Hubungi kami: 0895-3710-69379</p>
     <p>Email: kasturinetcerdas02@gmail.com</p>
     <p>&copy; 2025 Kasturinet. Solusi Cerdas untuk Internet Anda.</p>
-  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>AOS.init();</script></body>
+  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>  <script>
+    AOS.init();
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      autoplay: { delay: 3000 },
+    });
+  </script></body>
 </html>
